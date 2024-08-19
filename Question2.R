@@ -6,3 +6,5 @@ Y<-cbind(selected_data$SER, selected_data$FIN,selected_data$SPS, selected_data$T
 
 library(DescTools)
 (HotellingsT2Test(Y ~ as.factor(Region), data=selected_data,subset=as.factor(Region)%in% c("EFTA", "Other")))
+
+#Hi There
