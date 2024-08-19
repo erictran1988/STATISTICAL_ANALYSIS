@@ -2,15 +2,15 @@ er <- read.table("employregion.txt", header=TRUE)
 employmentregion <- er[, 2:9]
 str(employmentregion)
 
+#univariate Shapiro-Wilks tests
 library(MVN)
 result1<-mvn(employmentregion, mvnTest = "mardia", univariateTest="SW")
 names(result1)
 result1$univariateNormality
 
-
+#MVN
 employmentregion1<-employmentregion[,5:6]##SER and FIN
-
-
+par(mfrow = c(1,2))
 persp1<-mvn(employmentregion1, mvnTest="mardia", desc=FALSE,
             univariateTest="SW", multivariatePlot="persp")
 contour1<-mvn(employmentregion1, mvnTest="mardia", desc=FALSE,
